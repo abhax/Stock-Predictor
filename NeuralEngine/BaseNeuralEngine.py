@@ -1,14 +1,12 @@
 from __future__ import print_function
 import plaidml.keras
 plaidml.keras.install_backend()
-import tensorflow as tf 
 import keras
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
-import numpy as np
 import matplotlib.pyplot as plt
 
 batch_size = 128
@@ -38,12 +36,12 @@ print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 
-#plt.xlim(0.0, 1.0)
-#plt.ylim(0.0, 1.0)
-#plt.scatter(x_train,y_train)
-#plt.xlabel("x_val")
-#plt.ylabel("y_val")
-#plt.show()
+plt.xlim(0.0, 1.0)
+plt.ylim(0.0, 1.0)
+plt.scatter(x_train,y_train)
+plt.xlabel("x_val")
+plt.ylabel("y_val")
+plt.show()
 
 # convert class vectors to binary class matrices
 y_train = keras.utils.to_categorical(y_train, num_classes)
